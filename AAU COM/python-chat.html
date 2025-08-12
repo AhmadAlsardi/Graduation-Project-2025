@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Python Chat Room - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ناف بار -->
+    <nav>
+        <div class="left">
+            <div class="logo"><strong>AAU</strong> Community</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html">My Courses</a></li>
+            </ul>
+        </div>
+      <div class="right">
+    <a href="myprofile.html" class="profile" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+        <div class="profile-circle">A</div> Ahmad
+    </a>
+</div>
+
+    </nav>
+
+    <!-- غرفة الدردشة -->
+    <section class="chat-room">
+        <div class="chat-header">
+            <div class="title">
+                <span class="course-name">Python Programming</span>
+                <span class="sub">Course Chat Room</span>
+            </div>
+            <div class="header-action">
+                <button onclick="window.location.href='people.html'" class="people-button">Participants</button>
+            </div>
+        </div>
+
+        <div class="chat-body">
+            <div class="chat-messages">
+                <div class="message received">
+                    <span class="msg-meta">Ali - 10:30 AM</span>
+                    أهلاً أحمد، كيف واجب الدرس الأول؟
+                </div>
+                <div class="message sent">
+                    <span class="msg-meta">Ahmad - 10:32 AM</span>
+                    سهل الحمدلله 😄
+                </div>
+            </div>
+            <div class="user-list">
+                <div class="user-item">
+                    <div class="avatar">A</div> <span class="status">
+  <span class="status-dot"></span> Online
+</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <textarea placeholder="Type your message..."></textarea>
+            <button>Send</button>
+        </div>
+    </section>
+
+</body>
+</html>

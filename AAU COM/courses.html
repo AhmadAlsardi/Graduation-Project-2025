@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Courses - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo"><strong>AAU</strong> Community</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html" class="active">My Courses</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="myprofile.html" class="profile" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+                <div class="profile-circle">A</div> Ahmad
+            </a>
+        </div>
+
+    </nav>
+
+    <section class="course-overview container">
+        <h3>My Courses</h3>
+        <div class="course-filters">
+            <select id="category-filter" aria-label="Select course category">
+                <option value="">Select Category / All</option>
+                <option value="programming">Programming</option>
+                <option value="design">Design</option>
+                <option value="management">Management</option>
+            </select>
+        </div>
+
+        <div class="course-cards">
+            <a href="python-chat.html" class="course-card" data-category="programming">
+                <img src="png/python.png" alt="Python Programming Course" />
+                <div class="info">
+                    <strong>Python Programming Course</strong>
+                    <span>Beginner</span>
+                </div>
+            </a>
+
+            <a href="uiux-chat.html" class="course-card" data-category="design">
+                <img src="png/ux.png" alt="UI/UX Design Course" />
+                <div class="info">
+                    <strong>UI/UX Design Course</strong>
+                    <span>Intermediate</span>
+                </div>
+            </a>
+
+            <a href="pm-chat.html" class="course-card" data-category="management">
+                <img src="png/pm.png" alt="Project Management" />
+                <div class="info">
+                    <strong>Project Management</strong>
+                    <span>Advanced</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const filterSelect = document.getElementById('category-filter');
+        const courses = document.querySelectorAll('.course-card');
+
+        filterSelect.addEventListener('change', function () {
+            const selectedCategory = this.value;
+
+            courses.forEach(course => {
+                const courseCategory = course.getAttribute('data-category');
+
+                if (selectedCategory === '' || courseCategory === selectedCategory) {
+                    course.style.display = '';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <button class="contact-float-btn" onclick="window.location.href='contact.html'" aria-label="Contact Us">
+        &#9993;
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .home-card {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+            .home-card:hover {
+                background-color: #f0f0f0;
+            }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo"><strong>AAU</strong> Community</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="courses.html">My Courses</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="myprofile.html" class="profile" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+                <div class="profile-circle">A</div> Ahmad
+            </a>
+        </div>
+    </nav>
+
+    <main class="home-main container">
+        <div class="home-banner">
+            <div class="summary-overlay" aria-live="polite"></div>
+            <img src="png/logo2.png" alt="AAU Banner">
+        </div>
+
+        <h1>Welcome to the AAU Community</h1>
+
+        <!-- محتويات صفحة الهوم -->
+        <div class="home-content">
+            <div class="home-card"
+                 data-original='<h3>📢 Announcements</h3><p>Stay updated with the latest news and updates from AAU Community.</p>'
+                 data-new='AAU COMMUNITY is a secure web-based communication platform designed exclusively for Amman Arab University students enabling seamless academic and social interaction through organized chat rooms official login and enhanced security features.!'
+                 onclick="toggleContent(this)">
+                <h3>📢 Announcements</h3>
+                <p>Stay updated with the latest news and updates from AAU Community.</p>
+            </div>
+            <div class="home-card"
+                 data-original='<h3>📅 Your Courses</h3><p>Check out your courses, and activities.</p>'
+                 data-new='This site organizes all your semester courses into separate chat rooms, making it easy to access materials and communicate smoothly with your classmates and instructors.'
+                 onclick="toggleContent(this)">
+                <h3>📅 Your Courses</h3>
+                <p>Check out your courses, and activities.</p>
+            </div>
+            <div class="home-card"
+                 data-original='<h3>📚 Resources</h3><p>Access learning materials and helpful guides for your courses.</p>'
+                 data-new='This platform is officially approved by AAU university and all materials shared in the chat rooms are reviewed and authorized solely by the university.'
+                 onclick="toggleContent(this)">
+                <h3>📚 Resources</h3>
+                <p>Access learning materials and helpful guides for your courses.</p>
+            </div>
+        </div>
+
+        <!-- صورة تظهر عند السحب لأسفل -->
+        <div class="scroll-image">
+            <img src="png/logo3.jpeg" alt="AAU Scroll Image">
+        </div>
+
+        <!-- الزر -->
+        <a href="courses.html" class="btn btn-all-courses">View All Courses</a>
+    </main>
+
+    <script>
+        function toggleContent(card) {
+            const original = card.getAttribute('data-original');
+            const newText = card.getAttribute('data-new');
+
+            if (!card.classList.contains('show-new')) {
+                card.innerHTML = `<p>${newText}</p>`;
+                card.classList.add('show-new');
+            } else {
+                card.innerHTML = original;
+                card.classList.remove('show-new');
+            }
+        }
+
+        document.addEventListener("scroll", function () {
+            const scrollImage = document.querySelector(".scroll-image");
+            const imagePosition = scrollImage.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (imagePosition < windowHeight - 50) {
+                scrollImage.classList.add("show");
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const scrollImage = document.querySelector('.scroll-image');
+
+            window.scrollTo({
+                top: scrollImage.offsetTop - 50,
+                behavior: 'smooth'
+            });
+
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 1500);
+        });
+    </script>
+
+    <button class="contact-float-btn" onclick="window.location.href='contact.html'" aria-label="Contact Us">
+        &#9993;
+    </button>
+</body>
+</html>

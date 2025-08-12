@@ -1,0 +1,882 @@
+﻿/* Shared styles for the AAU Community website */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap');
+
+:root {
+    --primary-blue: #00509d;
+    --accent-orange: #f2782f;
+    --light-blue: #009fe3;
+    --light-grey-bg: #f2f5f7;
+    --border-grey: #d9d9d9;
+    --text-dark: #222;
+    --text-light-dark: #333;
+    --bg-white: #fff;
+    --hover-blue: #007bd4;
+    --font-main: 'Roboto', sans-serif;
+    --font-arabic: 'Cairo', sans-serif;
+    --max-container-width: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-grey-bg);
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    direction: ltr; /* Changed from rtl */
+    text-align: left; /* Changed from right */
+}
+
+/* Container */
+.container {
+    max-width: 1140px;
+    margin-inline: auto;
+    padding: 0 2rem;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-main);
+}
+
+    nav .left, nav .right {
+        display: flex;
+        align-items: center;
+    }
+
+        nav .left .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+            nav .left .logo strong {
+                font-weight: 900;
+            }
+
+    nav .nav-links {
+        margin-inline-end: 1.5rem; /* Changed margin-inline-start to margin-inline-end */
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem; /* زيادة المسافة بين الروابط */
+    }
+
+        nav .nav-links li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+            padding-bottom: 4px;
+            transition: color 0.25s ease, border-bottom 0.25s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+            nav .nav-links li a:hover,
+            nav .nav-links li a.active {
+                color: var(--primary-blue);
+                border-bottom-color: var(--primary-blue);
+            }
+
+    /* Profile area */
+    nav .right .profile {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+        cursor: default;
+        user-select: none;
+        font-weight: 500;
+    }
+
+    nav .right .profile-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: var(--border-grey);
+        color: var(--primary-blue);
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-main); /* Changed from Arabic font */
+        user-select: none;
+    }
+
+/* Responsive Navigation: stack on small */
+@media (max-width: 600px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 0.6rem 1rem;
+    }
+
+        nav .left, nav .right {
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+        }
+
+        nav .nav-links {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+            nav .nav-links li a {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.9rem;
+            }
+}
+
+/* Button common style */
+button, .btn {
+    font-family: var(--font-main); /* Changed to main font */
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--light-blue);
+    color: var(--bg-white);
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+    button:hover, .btn:hover {
+        background-color: var(--hover-blue);
+    }
+
+/* ----------- login.html ----------- */
+.login-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--light-grey-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 2vw;
+    font-family: var(--font-main); /* Changed to main font */
+}
+
+.login-box {
+    background-color: var(--bg-white);
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem 2.5rem 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+    .login-box img.logo {
+        width: 260px;
+        margin-bottom: 0.8rem;
+        user-select: none;
+    }
+
+    .login-box h3 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .login-box .login-button {
+        background-color: var(--light-blue);
+        color: var(--bg-white);
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 9px;
+        max-width: 320px;
+        margin-inline: auto;
+        border: none;
+        box-shadow: 0 3px 6px rgba(0,159,227,0.5);
+        cursor: pointer;
+        font-family: 'Georgia', serif;
+    }
+
+        .login-box .login-button:hover {
+            background-color: var(--hover-blue);
+        }
+
+    .login-box .section-divider {
+        border-top: 1px solid var(--border-grey);
+        margin: 2rem 0 1rem 0;
+    }
+
+    .login-box .intro-box {
+        border: none;
+        max-width: 400px;
+        margin-inline: auto;
+        padding: 0.6rem 1rem;
+        font-family: 'Georgia', serif;
+        font-size: 1rem;
+        margin-top: 30px; /* أو أي قيمة مناسبة */
+        color: var(--text-dark);
+        line-height: 1.6;
+        user-select: none;
+    }
+
+    .login-box .intro-box label {
+            display: block;
+            margin-top: 2px;
+        }
+        .login-box .intro-box label,
+        .login-box .intro-box input {
+            display: block;
+            margin-top: 12px; /* المسافة بين كل عنصر */
+        }
+
+
+        .login-box .intro-box input {
+            width: 100%;
+            margin-top: 1rem;
+            border: 1.5px solid var(--border-grey);
+            border-radius: 3px;
+            padding: 0.4rem 0.4rem;
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+
+/* ----------- home.html ----------- */
+.home-main {
+    background-color: var(--bg-white);
+    min-height: 80vh;
+    padding: 2rem 1.5rem;
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+    .home-main h1 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        font-size: 1.9rem;
+        color: var(--text-dark);
+        user-select: none;
+    }
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.home-card {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .home-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+.home-banner {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+    .home-banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* تزود المسافة بين اللوجو والقائمة */
+}
+
+
+    .home-main .btn-all-courses {
+        background-color: #ced4da;
+        color: var(--text-dark);
+        font-weight: 500;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        user-select: none;
+    }
+
+        .home-main .btn-all-courses:hover {
+            background-color: #adb5bd;
+        }
+.scroll-image {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1; /* يكون فوق الخلفية لكن تحت النص */
+}
+
+    .scroll-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+    }
+
+    /* لما تتفعل */
+    .scroll-image.show {
+        opacity: 1; /* إصلاح هنا */
+        transform: translateY(0);
+    }
+
+    /* النص كـ overlay */
+    .scroll-image .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        background: rgba(0, 0, 0, 0.4); /* شفافية */
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+
+/* ----------- my courses ----------- */
+.course-overview {
+    max-width: var(--max-container-width);
+    margin: 1rem auto;
+    padding: 0 1rem;
+    font-family: var(--font-main);
+}
+
+    .course-overview h3 {
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        user-select: none;
+    }
+
+/* Filters area */
+.course-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+    .course-filters select,
+    .course-filters input[type="search"] {
+        padding: 0.5rem 0.8rem;
+        font-size: 1rem;
+        border: 1.3px solid var(--border-grey);
+        border-radius: 8px;
+        flex-grow: 1;
+        max-width: 220px;
+        font-family: var(--font-main);
+        direction: ltr;
+    }
+
+/* Cards container */
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 280px); /* 3 أعمدة بعرض ثابت */
+    gap: 1rem;
+    justify-content: center; /* لتوسيط الشبكة */
+}
+
+.course-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-main);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
+    cursor: pointer;
+    user-select: none;
+}
+
+    .course-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-bottom: 1.5px solid var(--border-grey);
+    }
+
+    .course-card .info {
+        padding: 0.8rem 1rem;
+        flex-grow: 1;
+        font-size: 0.93rem;
+        color: var(--primary-blue);
+    }
+
+        .course-card .info strong {
+            display: block;
+            font-weight: 700;
+            margin-top: 0.3rem;
+        }
+
+        .course-card .info span {
+            display: block;
+            font-weight: 500;
+            margin-top: 0.1rem;
+            color: var(--text-light-dark);
+        }
+
+
+
+
+/* ----------- Chat Room ----------- */
+.people-button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+    .people-button:hover {
+        background-color: #d16300; /* لون أغمق عند المرور بالماوس */
+    }
+
+
+
+
+.chat-room {
+    width: 100%;
+    max-width: 1500px;
+    margin: 1rem auto;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 600px;
+    font-family: var(--font-main);
+    overflow: hidden;
+}
+
+/* هيدر الغرفة */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+}
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* يخلي العنوان على اليسار والزر على اليمين */
+    padding: 0.85rem 1rem;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+}
+
+/* زر People في الهيدر */
+.header-action .people-button {
+    background-color: var(--accent-orange);
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+    .header-action .people-button:hover {
+        background-color: #d16300;
+    }
+
+
+    .chat-header .title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-header .course-name {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .chat-header .sub {
+        font-size: 0.85rem;
+        opacity: 0.9;
+    }
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #222;
+    font-size: 0.95rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #28a745; /* اللون الأخضر */
+    border-radius: 50%;
+    box-shadow: 0 0 5px #28a745aa;
+    display: inline-block;
+}
+
+
+/* جسم الغرفة */
+.chat-body {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--light-grey-bg);
+}
+
+/* الرسائل */
+.chat-messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+/* رسالة */
+.message {
+    display: inline-block;
+    max-width: 80%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    line-height: 1.3;
+    font-size: 0.95rem;
+}
+
+    /* المرسلة منك */
+    .message.sent {
+        background-color: var(--light-blue);
+        color: var(--bg-white);
+        align-self: flex-end;
+    }
+
+    /* المستلمة */
+    .message.received {
+        background-color: var(--border-grey);
+        color: var(--text-dark);
+        align-self: flex-start;
+    }
+
+/* بيانات المرسل */
+.msg-meta {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-light-dark);
+    margin-bottom: 0.35rem;
+}
+
+/* قائمة الأعضاء */
+.user-list {
+    width: 200px;
+    min-width: 160px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 8px;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-self: flex-start;
+}
+
+.user-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 0.93rem;
+    color: var(--text-dark);
+}
+
+    .user-item .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: var(--primary-blue);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--bg-white);
+    }
+
+/* إدخال الرسائل */
+.chat-input {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border-grey);
+    background-color: var(--bg-white);
+}
+
+    .chat-input textarea {
+        flex: 1;
+        resize: none;
+        min-height: 44px;
+        max-height: 120px;
+        padding: 0.6rem 0.7rem;
+        border-radius: 6px;
+        border: 1px solid var(--border-grey);
+        font-size: 0.95rem;
+        font-family: var(--font-main);
+        outline: none;
+    }
+
+    .chat-input button {
+        background-color: var(--light-blue);
+        color: var(--bg-white);
+        border: none;
+        padding: 0.6rem 0.9rem;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .chat-input button:hover {
+            background-color: var(--hover-blue);
+        }
+
+/* موبايل */
+@media (max-width: 800px) {
+    .chat-body {
+        flex-direction: column;
+    }
+
+    .user-list {
+        width: 100%;
+        order: 2;
+    }
+
+    .chat-messages {
+        order: 1;
+    }
+}
+
+/* ----------- people.html ----------- */
+.people-table-container {
+    max-width: var(--max-container-width);
+    margin: 1rem auto;
+    padding: 0 1rem;
+    font-family: var(--font-main);
+    overflow-x: auto;
+}
+
+.people-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+    .people-table thead tr {
+        background-color: var(--light-grey-bg);
+        border-bottom: 1.5px solid var(--border-grey);
+    }
+
+    .people-table th,
+    .people-table td {
+        padding: 0.68rem 0.9rem;
+        border-bottom: 1px solid var(--border-grey);
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    .people-table th {
+        color: var(--primary-blue);
+        font-weight: 700;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .people-table tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .people-table tbody tr:hover {
+        background-color: var(--light-blue);
+        color: var(--bg-white);
+    }
+
+    .people-table .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: var(--border-grey);
+        color: var(--primary-blue);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-main);
+        font-weight: 700;
+        user-select: none;
+    }
+
+.checkbox-cell {
+    text-align: center;
+    width: 40px;
+}
+
+/* ----------- contact.html ----------- */
+.contact-main {
+    max-width: var(--max-container-width);
+    margin: 1rem auto;
+    padding: 1rem 1rem 4rem;
+    font-family: var(--font-main);
+}
+
+    .contact-main h2 {
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        user-select: none;
+    }
+
+    .contact-main p {
+        user-select: none;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .contact-main form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .contact-main label {
+        font-weight: 600;
+        user-select: none;
+    }
+
+    .contact-main input[type="text"],
+    .contact-main input[type="email"],
+    .contact-main textarea {
+        border: 1.3px solid var(--border-grey);
+        border-radius: 6px;
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+        font-family: var(--font-main);
+        resize: vertical;
+    }
+
+    .contact-main textarea {
+        min-height: 120px;
+    }
+
+    .contact-main button {
+        max-width: 160px;
+        margin-top: 0.5rem;
+        align-self: flex-start;
+        background-color: var(--primary-blue);
+        color: var(--bg-white);
+        font-weight: 700;
+    }
+
+        .contact-main button:hover {
+            background-color: var(--hover-blue);
+        }
+
+.contact-float-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    user-select: none;
+    display: flex; /* إضافة */
+    align-items: center; /* إضافة */
+    justify-content: center; /* إضافة */
+    padding: 0; /* إزالة الحشو إذا كان موجود */
+}
+
+
+/* Responsive for forms and tables */
+@media (max-width: 600px) {
+    .course-filters {
+        flex-direction: column;
+    }
+
+    nav .nav-links {
+        justify-content: flex-start;
+        overflow-x: scroll;
+        padding-bottom: 0.2rem;
+    }
+
+    .people-table-container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-main form {
+        width: 280px;
+        padding: 0 0.4rem;
+    }
+
+    .course-card img {
+        width: 280px;
+        height: 110px;
+    }
+}

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Profile - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ناف بار -->
+    <nav>
+        <div class="left">
+            <div class="logo"><strong>AAU</strong> Community</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html">My Courses</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="myprofile.html" class="profile" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+                <div class="profile-circle">A</div> Ahmad
+            </a>
+        </div>
+
+    </nav>
+
+    <main class="container" style="padding: 2rem 1.5rem;">
+        <h1 style="font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); user-select: none;">My Profile</h1>
+
+        <!-- معلومات شخصية -->
+        <section class="profile-info" style="background-color: var(--bg-white); padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 600px; margin-bottom: 2rem;">
+
+            <!-- دائرة الصورة الشخصية بحجم أكبر -->
+            <div class="profile-circle" style="
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+        line-height: 80px;
+        border-radius: 50%;
+        background-color: #3b82f6; /* لون أزرق مثل بار الرئيسي */
+        color: white;
+        text-align: center;
+        user-select: none;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    ">A</div>
+
+            <h2 style="font-weight: 600; margin-bottom: 1rem; user-select: none;">Personal Information</h2>
+            <p><strong>Name:</strong> Ahmad Rakan Alsuradi</p>
+            <p><strong>Email:</strong> 202120239@aau.edu.jo</p>
+            <p><strong>Role:</strong> Student</p>
+            <p><strong>Phone:</strong> 0790012104</p>
+
+        </section>
+
+
+        <!-- الكورسات -->
+        <section class="my-courses">
+            <h2 style="font-weight: 700; margin-bottom: 1rem; user-select: none;">My Courses</h2>
+
+            <div class="home-content" style="gap: 1.5rem; display: flex; flex-wrap: wrap;">
+                <!-- كورس 1 -->
+                <div class="home-card" style="width: 280px;">
+                    <h3>UI/UX Design</h3>
+                    <p>Learn the fundamentals of user interface and user experience design.<p>Course number   4457124</p></p>
+                </div>
+
+                <!-- كورس 2 -->
+                <div class="home-card" style="width: 280px;">
+                    <h3>Python Programming</h3>
+                    <p>Introduction to Python programming and basic concepts.<p>Course number   4523649</p></p>
+                </div>
+
+                <!-- كورس 3 -->
+                <div class="home-card" style="width: 280px;">
+                    <h3>Project Management</h3>
+                    <p>Fundamentals of managing projects effectively.<p>Course number   2147883</p></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button class="contact-float-btn" onclick="window.location.href='contact.html'" aria-label="Contact Us">
+        &#9993;
+    </button>
+
+</body>
+</html>

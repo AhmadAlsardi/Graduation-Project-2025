@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo"><strong>AAU</strong> Community</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html">My Courses</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="myprofile.html" class="profile" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:0.5rem;">
+                <div class="profile-circle">A</div> Ahmad
+            </a>
+        </div>
+
+        </div>
+    </nav>
+
+    <main class="contact-main container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need support, please fill out the form below.</p>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="202120239@aau.edu.jo" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+</body>
+</html>

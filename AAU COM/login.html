@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - AAU Community</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <img src="png/AAU%20logo.png" style="margin-top: 1rem; "margin-bottom: 0.2rem; alt="AAU Community Logo" class="logo" />
+            <form>
+                <div class="intro-box">
+                    <label for="username"  ></label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required />
+
+                    <label for="password" style="margin-top: 2rem;"></label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                </div>
+
+                <button type="submit" style="margin-top: 1rem; "margin-bottom: 0.4rem; class="login-button">Sign In</button>
+            </form>
+
+            <div class="section-divider"></div>
+            <p>Welcome to AAU Community</p>
+        </div>
+    </div>
+    <script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // لمنع الإرسال الافتراضي
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // حدد اسم المستخدم وكلمة المرور
+    const validUsername = "202120239";
+    const validPassword = "1234";
+
+    if(username === validUsername && password === validPassword) {
+      // إذا صح، انتقل لصفحة home.html
+      window.location.href = "home.html";
+    } else {
+      alert("Incorrect username or password. Please try again.");
+    }
+  });
+    </script>
+
+</body>
+</html>
